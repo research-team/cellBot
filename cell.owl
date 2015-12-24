@@ -44,6 +44,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#of"/>
+    
+
+
     <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
@@ -53,6 +59,14 @@
     <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#produces -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#produces"/>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#stores -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#stores">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
     
 
 
@@ -70,8 +84,14 @@
     <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Adenosine_triphosphate -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Adenosine_triphosphate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Cell"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Ca -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Ca"/>
     
 
 
@@ -140,6 +160,46 @@
     
 
 
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Endoplasmic_reticulum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Endoplasmic_reticulum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Organelle"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#produces"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#stores"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Ca"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#of"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Transport"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Metabolism"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Energy -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Energy"/>
@@ -168,20 +228,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Lipids -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Lipids">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Lysosome -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Lysosome">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Vesicle"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Feeding"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#consumes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Organelle"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#consumes"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Organelle"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Feeding"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -202,12 +270,6 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Organelle"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#consumes"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#O2"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#produces"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Adenosine_triphosphate"/>
             </owl:Restriction>
@@ -216,6 +278,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Respiration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#consumes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#O2"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -250,6 +318,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Phospholipids -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Phospholipids">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Photosynthesis -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Photosynthesis">
@@ -265,15 +341,23 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Photosynthesis"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Respiration"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Respiration"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Photosynthesis"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Cell"/>
     </owl:Class>
     
 
@@ -294,10 +378,54 @@
     
 
 
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Rough_endoplasmic_reticulum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Rough_endoplasmic_reticulum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Endoplasmic_reticulum"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Smooth_endoplasmic_reticulum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Smooth_endoplasmic_reticulum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Endoplasmic_reticulum"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Phospholipids"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Steroids"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#produces"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Lipids"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Spindle_apparatus -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Spindle_apparatus">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Cell"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Steroids -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Steroids">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Transport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Transport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Functions"/>
     </owl:Class>
     
 
