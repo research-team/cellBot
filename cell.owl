@@ -120,6 +120,20 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#of"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Motor_protein"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Transport"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#plays_role_in"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Division"/>
@@ -184,6 +198,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Division">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Reproduction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Dynein -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Dynein">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Motor_protein"/>
     </owl:Class>
     
 
@@ -274,6 +296,14 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Vesicular_transport"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Kinesin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Kinesin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Motor_protein"/>
     </owl:Class>
     
 
@@ -372,6 +402,12 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Motor_protein">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Protein"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#consumes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/max/ontologies/2015/11/cell-functions#Adenosine_triphosphate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
