@@ -1,5 +1,7 @@
 #Design specification for the self-replicating robots 2D
 
+## RNA robots
+
 First of all we plan to create something like 10 - 50 of components of two types:
 
 - engines with water propeller
@@ -35,6 +37,7 @@ that could be water mix or we could initiate first pair. After some time of stoc
 After some time repetition of the steps described above, there should be some significant
 growth of pairs.
 
+## Cell robots
 
 ![Cell semantic map](cell_semantic_map.png)
 
