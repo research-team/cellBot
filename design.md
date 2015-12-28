@@ -1,6 +1,11 @@
 #Design specification for the self-replicating robots 2D
 
-First of all we plan to create something like 10 - 50 of components 
+First of all we plan to create something like 10 - 50 of components of two types:
+
+- engines with water propeller
+- batteries
+
+Both engines and batteries will be placed in water proof and floating plastic containers.
 
 
 ![Self replicating robots principal scheme](self_replicating.png)
