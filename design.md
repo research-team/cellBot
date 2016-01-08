@@ -45,7 +45,7 @@ growth of pairs.
 
 http://www.bgmicro.com/12v-motor-with-governor.aspx
 
-## Cell robots
+## Cells ontology inspiring for cell bots
 
 ![Cell semantic map](cell_semantic_map.png)
 
