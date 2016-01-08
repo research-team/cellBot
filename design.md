@@ -37,6 +37,14 @@ that could be water mix or we could initiate first pair. After some time of stoc
 After some time repetition of the steps described above, there should be some significant
 growth of pairs.
 
+##3D design
+
+![](concept.png)
+
+##Motor
+
+http://www.bgmicro.com/12v-motor-with-governor.aspx
+
 ## Cell robots
 
 ![Cell semantic map](cell_semantic_map.png)
